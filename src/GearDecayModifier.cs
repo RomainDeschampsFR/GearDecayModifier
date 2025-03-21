@@ -38,13 +38,9 @@ namespace GearDecayModifier
                         {
                             decay_multiplier *= Settings.options.flareGunAmmoSingleDecay;
                         }
-                        else if (gi.name == "GEAR_CoffeeTin")
+                        else if (gi.name == "GEAR_CoffeeTin" || gi.name == "GEAR_GreenTeaPackage")
                         {
-                            decay_multiplier *= Settings.options.coffeeTinDecay;
-                        }
-                        else if (gi.name == "GEAR_GreenTeaPackage")
-                        {
-                            decay_multiplier *= Settings.options.greenTeaPackageDecay;
+                            decay_multiplier *= Settings.options.coffeeTeaDecay;
                         }
                         else if (gi.m_ClothingItem)
                         {
