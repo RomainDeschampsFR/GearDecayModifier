@@ -96,7 +96,7 @@ namespace GearDecayModifier
         public float onUseDecay = 1f;
 
         [Name("Advanced on use decay Modifiers")]
-        [Description("Turn this on to make on use decay control more granular.")]
+        [Description("Turn this on to make on use decay control more granular.\nGlobal decay on use setting will still be applied for anything not covered by the foloowing categories")]
         public bool advOnUseDecay = false;
 
         [Name("Guns decay rate")]
@@ -123,6 +123,11 @@ namespace GearDecayModifier
         [Description("Modifies how much decay is applied to whetstones when used.")]
         [Slider(0f, 2f, 1)]
         public float whetstoneDecay = 1f;
+
+        [Name("Can opener decay rate")]
+        [Description("Modifies how much decay is applied to can openers when used.")]
+        [Slider(0f, 2f, 1)]
+        public float canOpenerDecay = 1f;
 
         [Name("Prybar decay rate")]
         [Description("Modifies how much decay is applied to prybars when used.")]

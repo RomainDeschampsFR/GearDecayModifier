@@ -54,10 +54,6 @@ namespace GearDecayModifier
                         {
                             decay_multiplier *= Settings.options.arrowDecay;
                         }
-                        /*else if (gi.name == "GEAR_GreenTeaCup" || gi.name == "GEAR_ReishiTea" || gi.name == "GEAR_RoseHipTea" || gi.name == "GEAR_BurdockTea" || gi.name == "GEAR_BirchbarkTea" || gi.name == "GEAR_CoffeeCup" || gi.name == "GEAR_AcornCoffeeCup")
-                        {
-                            decay_multiplier *= Settings.options.cookedTeasAndCoffeesDecay;
-                        }*/
                         else if (gi.m_FoodItem)
                         {
                             //if advanced food
@@ -126,6 +122,10 @@ namespace GearDecayModifier
                         else if (gi.name == "GEAR_SharpeningStone")
                         {
                             decay_multiplier *= Settings.options.whetstoneDecay;
+                        }
+                        else if (gi.name == "GEAR_CanOpener")
+                        {
+                            decay_multiplier *= Settings.options.canOpenerDecay;
                         }
                         else if (gi.name == "GEAR_Prybar")
                         {
