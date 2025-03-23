@@ -42,6 +42,10 @@ namespace GearDecayModifier
                         {
                             decay_multiplier *= Settings.options.coffeeTeaDecay;
                         }
+                        else if (gi.name == "GEAR_Potato" || gi.name == "GEAR_Carrot" || gi.name == "GEAR_Flour" || gi.name == "GEAR_OatsTin")
+                        {
+                            decay_multiplier *= Settings.options.ingredientsDecay;
+                        }
                         else if (gi.m_ClothingItem)
                         {
                             decay_multiplier *= Settings.options.clothingDecay;

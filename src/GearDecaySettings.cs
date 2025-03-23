@@ -39,6 +39,11 @@ namespace GearDecayModifier
         [Slider(0f, 2f, 1)]
         public float coffeeTeaDecay = 1f;
 
+        [Name("Cooking ingredients")]
+        [Description("At what rate the cooking ingredients will decay. Raw Potatoes, Carrots, Old Mill Flour & Running River Oats")]
+        [Slider(0f, 2f, 1)]
+        public float ingredientsDecay = 1f;
+
         [Name("Clothing decay rate")]
         [Description("At what rate the clothing will decay. For example, 1 is default, 0.5 is half decay, and 0 is no decay at all.")]
         [Slider(0f, 2f, 1)]
