@@ -4,7 +4,7 @@ using ModSettings;
 
 namespace GearDecayModifier
 {
-    internal class GearDecaySettings : JsonModSettings
+    internal class GearDecayModifiersSettings : JsonModSettings
     {
         [Section("GENERAL DECAY SETTINGS")]
 
@@ -62,6 +62,16 @@ namespace GearDecayModifier
         [Name("Advanced food decay Modifiers")]
         [Description("Turn this on to make food decay control more granular.")]
         public bool advFoodDecay = false;
+
+        [Name("Animal Fat decay rate")]
+        [Description("This affects the rate at which animal fat will decay.")]
+        [Slider(0f, 2f, 1)]
+        public float curedMeatAndFishDecay = 1f;
+
+        [Name("Cured Meat & Fish decay rate")]
+        [Description("This affects the rate at which cured meat and fish will decay.")]
+        [Slider(0f, 2f, 1)]
+        public float fatDecay = 1f;
 
         [Name("Raw meat decay rate")]
         [Description("This affects the rate at which raw meat and fish will decay.")]
@@ -164,9 +174,7 @@ namespace GearDecayModifier
             SetFieldVisible(nameof(quartersDecay), advDecay);
             SetFieldVisible(nameof(firstAidDecay), advDecay);
             SetFieldVisible(nameof(flareGunAmmoSingleDecay), advDecay);
-            SetFieldVisible(nameof(coffeeTinDecay), advDecay);
-            SetFieldVisible(nameof(greenTeaPackageDecay), advDecay);
-            //SetFieldVisible(nameof(cookedTeasAndCoffeesDecay), advDecay);
+            SetFieldVisible(nameof(coffeeTeaDecay), advDecay);
             SetFieldVisible(nameof(gunDecay), advOnUseDecay);
             SetFieldVisible(nameof(bowDecay), advOnUseDecay);
             SetFieldVisible(nameof(arrowDecay), advOnUseDecay);
@@ -179,13 +187,12 @@ namespace GearDecayModifier
 
     internal static class Settings
     {
-        public static GearDecaySettings options;
+        public static GearDecayModifiersSettings settings = new() ;
 
         public static void OnLoad()
         {
-            options = new GearDecaySettings();
-            options.RefreshFields();
-            options.AddToModSettings("Gear Decay Modifiers");
+            settings.AddToModSettings("Gear Decay Modifier");
+            settings.RefreshFields();
         }
     }
 }

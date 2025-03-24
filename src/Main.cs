@@ -5,7 +5,7 @@ using Il2Cpp;
 
 namespace GearDecayModifier
 {
-    public class GearDecayModifier : MelonMod
+    public class Main : MelonMod
     {
         public override void OnInitializeMelon()
         {
@@ -18,7 +18,7 @@ namespace GearDecayModifier
 
             if (gi.m_Bed)
             {
-                decay_multiplier *= Settings.options.bedrollDecay;
+                decay_multiplier *= Settings.settings.bedrollDecay;
             }
             else
             {
@@ -27,126 +27,134 @@ namespace GearDecayModifier
                     //Before pickup decay
                     if (!gi.m_BeenInspected && !gi.m_BeenInPlayerInventory)
                     {
-                        decay_multiplier *= Settings.options.decayBeforePickup;
+                        decay_multiplier *= Settings.settings.decayBeforePickup;
                     }
 
                     //Natural degrade
                     //if advanced decay
-                    if (Settings.options.advDecay)
+                    if (Settings.settings.advDecay)
                     {
                         if (gi.name == "GEAR_FlareGunAmmoSingle")
                         {
-                            decay_multiplier *= Settings.options.flareGunAmmoSingleDecay;
+                            decay_multiplier *= Settings.settings.flareGunAmmoSingleDecay;
                         }
                         else if (gi.name == "GEAR_CoffeeTin" || gi.name == "GEAR_GreenTeaPackage")
                         {
-                            decay_multiplier *= Settings.options.coffeeTeaDecay;
+                            decay_multiplier *= Settings.settings.coffeeTeaDecay;
                         }
                         else if (gi.name == "GEAR_Potato" || gi.name == "GEAR_Carrot" || gi.name == "GEAR_Flour" || gi.name == "GEAR_OatsTin")
                         {
-                            decay_multiplier *= Settings.options.ingredientsDecay;
+                            decay_multiplier *= Settings.settings.ingredientsDecay;
                         }
                         else if (gi.m_ClothingItem)
                         {
-                            decay_multiplier *= Settings.options.clothingDecay;
+                            decay_multiplier *= Settings.settings.clothingDecay;
                         }
                         else if (gi.m_BodyHarvest)
                         {
-                            decay_multiplier *= Settings.options.quartersDecay;
+                            decay_multiplier *= Settings.settings.quartersDecay;
                         }
                         else if (gi.m_ArrowItem)
                         {
-                            decay_multiplier *= Settings.options.arrowDecay;
+                            decay_multiplier *= Settings.settings.arrowDecay;
                         }
                         else if (gi.m_FoodItem)
                         {
                             //if advanced food
-                            if (Settings.options.advFoodDecay)
+                            if (Settings.settings.advFoodDecay)
                             {
                                 if (gi.m_FoodItem.m_IsNatural)
                                 {
-                                    if (gi.m_FoodItem.m_IsRawMeat)
+                                    if (gi.m_FoodItem.m_IsFat)
                                     {
-                                        decay_multiplier *= Settings.options.rawFoodDecay;
+                                        decay_multiplier *= Settings.settings.fatDecay;
+                                    }
+                                    else if (gi.name == "GEAR_CuredMeat" || gi.name == "GEAR_CuredFish")
+                                    {
+                                        decay_multiplier *= Settings.settings.curedMeatAndFishDecay;
+                                    }
+                                    else if (gi.m_FoodItem.m_IsRawMeat)
+                                    {
+                                        decay_multiplier *= Settings.settings.rawFoodDecay;
                                     }
                                     else
                                     {
-                                        decay_multiplier *= Settings.options.cookedFoodDecay;
+                                        decay_multiplier *= Settings.settings.cookedFoodDecay;
                                     }
                                 }
                                 else
                                 {
                                     if (!gi.m_FoodItem.m_Opened)
                                     {
-                                        decay_multiplier *= Settings.options.packagedFoodDecay;
+                                        decay_multiplier *= Settings.settings.packagedFoodDecay;
                                     }
                                     else
                                     {
-                                        decay_multiplier *= Settings.options.openedFoodDecay;
+                                        decay_multiplier *= Settings.settings.openedFoodDecay;
                                     }
                                 }
                             }
                             else
                             {
-                                decay_multiplier *= Settings.options.foodDecay;
+                                decay_multiplier *= Settings.settings.foodDecay;
                             }
                         }
                         else if (gi.m_FirstAidItem)
                         {
-                            decay_multiplier *= Settings.options.firstAidDecay;
+                            decay_multiplier *= Settings.settings.firstAidDecay;
                         }
                         else
                         {
-                            decay_multiplier *= Settings.options.generalDecay;
+                            decay_multiplier *= Settings.settings.generalDecay;
                         }
                     }
                     else
                     {
-                        decay_multiplier *= Settings.options.generalDecay;
+                        decay_multiplier *= Settings.settings.generalDecay;
                     }
                 }
                 else
                 {
                     //Items that degrade on use
                     //if advanced decay on use
-                    if (Settings.options.advOnUseDecay)
+                    if (Settings.settings.advOnUseDecay)
                     {
                         if (gi.m_GunItem)
                         {
-                            decay_multiplier *= Settings.options.gunDecay;
+                            decay_multiplier *= Settings.settings.gunDecay;
                         }
                         else if (gi.m_BowItem)
                         {
-                            decay_multiplier *= Settings.options.bowDecay;
+                            decay_multiplier *= Settings.settings.bowDecay;
                         }
                         else if (gi.m_FireStarterItem)
                         {
-                            decay_multiplier *= Settings.options.firestartingDecay;
+                            decay_multiplier *= Settings.settings.firestartingDecay;
                         }
                         else if (gi.name == "GEAR_SharpeningStone")
                         {
-                            decay_multiplier *= Settings.options.whetstoneDecay;
+                            decay_multiplier *= Settings.settings.whetstoneDecay;
                         }
                         else if (gi.name == "GEAR_CanOpener")
                         {
-                            decay_multiplier *= Settings.options.canOpenerDecay;
+                            decay_multiplier *= Settings.settings.canOpenerDecay;
                         }
                         else if (gi.name == "GEAR_Prybar")
                         {
-                            decay_multiplier *= Settings.options.prybarDecay;
+                            decay_multiplier *= Settings.settings.prybarDecay;
                         }
                         else if (gi.m_ToolsItem)
                         {
-                            decay_multiplier *= Settings.options.toolsDecay;
+                            decay_multiplier *= Settings.settings.toolsDecay;
                         }
                         else
                         {
-                            decay_multiplier *= Settings.options.onUseDecay;
+                            decay_multiplier *= Settings.settings.onUseDecay;
                         }
                     }
                     else
                     {
-                        decay_multiplier *= Settings.options.onUseDecay;
+                        decay_multiplier *= Settings.settings.onUseDecay;
                     }
                 }
             }
