@@ -10,7 +10,7 @@ namespace GearDecayModifier
     {
         private static void Prefix(GearItem __instance, ref float hp)
         {
-            float decay_multiplier = GearDecayModifier.ApplyDecayModifier(__instance);
+            float decay_multiplier = Main.ApplyDecayModifier(__instance);
 
             hp *= decay_multiplier;
         }
