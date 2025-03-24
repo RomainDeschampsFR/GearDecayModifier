@@ -16,6 +16,9 @@ namespace GearDecayModifier
         {
             float decay_multiplier = 1f;
 
+            //Before pickup decay
+            if (!gi.m_BeenInspected && !gi.m_BeenInPlayerInventory) decay_multiplier *= Settings.settings.decayBeforePickup;
+
             if (gi.m_Bed)
             {
                 decay_multiplier *= Settings.settings.bedrollDecay;
@@ -24,17 +27,11 @@ namespace GearDecayModifier
             {
                 if (!gi.m_DegradeOnUse)
                 {
-                    //Before pickup decay
-                    if (!gi.m_BeenInspected && !gi.m_BeenInPlayerInventory)
-                    {
-                        decay_multiplier *= Settings.settings.decayBeforePickup;
-                    }
-
                     //Natural degrade
                     //if advanced decay
                     if (Settings.settings.advDecay)
                     {
-                        if (gi.name == "GEAR_FlareGunAmmoSingle")
+                        if (gi.m_FlareGunRoundItem)
                         {
                             decay_multiplier *= Settings.settings.flareGunAmmoSingleDecay;
                         }
@@ -50,7 +47,7 @@ namespace GearDecayModifier
                         {
                             decay_multiplier *= Settings.settings.clothingDecay;
                         }
-                        else if (gi.m_BodyHarvest)
+                        else if (gi.m_BodyHarvest.m)
                         {
                             decay_multiplier *= Settings.settings.quartersDecay;
                         }
