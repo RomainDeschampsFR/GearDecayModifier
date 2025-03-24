@@ -34,12 +34,12 @@ namespace GearDecayModifier
         [Slider(0f, 2f, 1)]
         public float flareGunAmmoSingleDecay = 1f;
 
-        [Name("Coffee & Tea packages decay rate")]
+        [Name("Coffee Tins & Herbal Tea packages decay rate")]
         [Description("At what rate the coffee tin & herbal tea package will decay. For example, 1 is default, 0.5 is half decay, and 0 is no decay at all.")]
         [Slider(0f, 2f, 1)]
         public float coffeeTeaDecay = 1f;
 
-        [Name("Cooking ingredients")]
+        [Name("Cooking ingredients decay rate")]
         [Description("At what rate the cooking ingredients will decay. Raw Potatoes, Carrots, Old Mill Flour & Running River Oats")]
         [Slider(0f, 2f, 1)]
         public float ingredientsDecay = 1f;
@@ -68,20 +68,35 @@ namespace GearDecayModifier
         [Slider(0f, 2f, 1)]
         public float fatDecay = 1f;
 
-        [Name("Cured Meat & Fish decay rate")]
-        [Description("This affects the rate at which cured meat and fish will decay.")]
-        [Slider(0f, 2f, 1)]
-        public float curedMeatAndFishDecay = 1f;
-
         [Name("Raw meat decay rate")]
         [Description("This affects the rate at which raw meat and fish will decay.")]
         [Slider(0f, 2f, 1)]
-        public float rawFoodDecay = 1f;
+        public float rawMeatDecay = 1f;
 
         [Name("Cooked meat decay rate")]
         [Description("This affects the rate at which cooked meat and fish will decay.")]
         [Slider(0f, 2f, 1)]
-        public float cookedFoodDecay = 1f;
+        public float cookedMeatDecay = 1f;
+
+        [Name("Cured Meat decay rate")]
+        [Description("This affects the rate at which cured meat will decay.")]
+        [Slider(0f, 2f, 1)]
+        public float curedMeatDecay = 1f;
+
+        [Name("Raw fish decay rate")]
+        [Description("This affects the rate at which raw fish and fish will decay.")]
+        [Slider(0f, 2f, 1)]
+        public float rawFishDecay = 1f;
+
+        [Name("Cooked fish decay rate")]
+        [Description("This affects the rate at which cooked fish and fish will decay.")]
+        [Slider(0f, 2f, 1)]
+        public float cookedFishDecay = 1f;
+
+        [Name("Cured Fish decay rate")]
+        [Description("This affects the rate at which cured fish will decay.")]
+        [Slider(0f, 2f, 1)]
+        public float curedFishDecay = 1f;
 
         [Name("Packaged food decay rate")]
         [Description("This affects the rate at which packaged foods and drinks will decay.")]
@@ -166,8 +181,12 @@ namespace GearDecayModifier
         {
             SetFieldVisible(nameof(foodDecay), advDecay);
             SetFieldVisible(nameof(advFoodDecay), advDecay);
-            SetFieldVisible(nameof(rawFoodDecay), advDecay && advFoodDecay);
-            SetFieldVisible(nameof(cookedFoodDecay), advDecay && advFoodDecay);
+            SetFieldVisible(nameof(rawMeatDecay), advDecay && advFoodDecay);
+            SetFieldVisible(nameof(cookedMeatDecay), advDecay && advFoodDecay);
+            SetFieldVisible(nameof(curedMeatDecay), advDecay && advFoodDecay);
+            SetFieldVisible(nameof(rawFishDecay), advDecay && advFoodDecay);
+            SetFieldVisible(nameof(cookedFishDecay), advDecay && advFoodDecay);
+            SetFieldVisible(nameof(curedFishDecay), advDecay && advFoodDecay);
             SetFieldVisible(nameof(packagedFoodDecay), advDecay && advFoodDecay);
             SetFieldVisible(nameof(openedFoodDecay), advDecay && advFoodDecay);
             SetFieldVisible(nameof(clothingDecay), advDecay);

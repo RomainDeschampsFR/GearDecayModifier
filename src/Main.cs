@@ -69,17 +69,35 @@ namespace GearDecayModifier
                                     {
                                         decay_multiplier *= Settings.settings.fatDecay;
                                     }
-                                    else if (gi.name == "GEAR_CuredMeat" || gi.name == "GEAR_CuredFish")
+                                    else if (gi.m_FoodItem.m_IsMeat)
                                     {
-                                        decay_multiplier *= Settings.settings.curedMeatAndFishDecay;
+                                        if (gi.name == "GEAR_CuredMeat")
+                                        {
+                                            decay_multiplier *= Settings.settings.curedMeatDecay;
+                                        }
+                                        else if (gi.m_FoodItem.m_IsRawMeat)
+                                        {
+                                            decay_multiplier *= Settings.settings.rawMeatDecay;
+                                        }
+                                        else
+                                        {
+                                            decay_multiplier *= Settings.settings.cookedMeatDecay;
+                                        }
                                     }
-                                    else if (gi.m_FoodItem.m_IsRawMeat)
+                                    else if (gi.m_FoodItem.m_IsFish)
                                     {
-                                        decay_multiplier *= Settings.settings.rawFoodDecay;
-                                    }
-                                    else
-                                    {
-                                        decay_multiplier *= Settings.settings.cookedFoodDecay;
+                                        if (gi.name == "GEAR_CuredFish")
+                                        {
+                                            decay_multiplier *= Settings.settings.curedFishDecay;
+                                        }
+                                        else if (gi.m_FoodItem.m_IsRawMeat)
+                                        {
+                                            decay_multiplier *= Settings.settings.rawFishDecay;
+                                        }
+                                        else
+                                        {
+                                            decay_multiplier *= Settings.settings.cookedFishDecay;
+                                        }
                                     }
                                 }
                                 else
