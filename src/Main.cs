@@ -43,6 +43,10 @@ namespace GearDecayModifier
                         {
                             decay_multiplier *= Settings.settings.torchDecay;
                         }
+                        else if (gi.m_SprayPaintCan)
+                        {
+                            decay_multiplier *= Settings.settings.paintCanDecay;
+                        }
                         else if (gi.name == "GEAR_CoffeeTin" || gi.name == "GEAR_GreenTeaPackage")
                         {
                             decay_multiplier *= Settings.settings.coffeeTeaDecay;
