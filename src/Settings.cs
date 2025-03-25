@@ -83,11 +83,6 @@ namespace GearDecayModifier
         [Slider(0f, 2f, 1)]
         public float fatDecay = 1f;
 
-        [Name("Drinks decay rate")]
-        [Description("This affects the rate at which sodas will decay.")]
-        [Slider(0f, 2f, 1)]
-        public float drinksDecay = 1f;
-
         [Name("Raw meat decay rate")]
         [Description("This affects the rate at which raw meat and fish will decay.")]
         [Slider(0f, 2f, 1)]
@@ -118,10 +113,20 @@ namespace GearDecayModifier
         [Slider(0f, 2f, 1)]
         public float curedFishDecay = 1f;
 
+        [Name("Drinks decay rate")]
+        [Description("This affects the rate at which sodas will decay.")]
+        [Slider(0f, 2f, 1)]
+        public float drinksDecay = 1f;
+
         [Name("Packaged food decay rate")]
-        [Description("This affects the rate at which packaged foods and drinks will decay.")]
+        [Description("This affects the rate at which packaged foods will decay.")]
         [Slider(0f, 2f, 1)]
         public float packagedFoodDecay = 1f;
+
+        [Name("Canned food decay rate")]
+        [Description("This affects the rate at which non-opened canned foods will decay.")]
+        [Slider(0f, 2f, 1)]
+        public float cannedFoodDecay = 1f;
 
         [Name("Packaged food decay rate when opened")]
         [Description("This affects the rate at which packaged foods will decay while they are open.")]
