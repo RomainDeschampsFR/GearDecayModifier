@@ -69,6 +69,11 @@ namespace GearDecayModifier
         [Slider(0f, 2f, 1)]
         public float quartersDecay = 1f;
 
+        [Name("Fresh hides decay rate")]
+        [Description("At what rate the fresh hides/pelts items decay.")]
+        [Slider(0f, 2f, 1)]
+        public float hideDecay = 1f;
+
         [Name("Food decay rate")]
         [Description("At what rate the food items decay. This value will be ignored if Advanced Food Decay Modifier is enabled")]
         [Slider(0f, 2f, 1)]

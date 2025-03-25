@@ -66,6 +66,10 @@ namespace GearDecayModifier
                                 decay_multiplier *= Settings.settings.quartersDecay;
                             }
                         }
+                        else if (gi.m_EvolveItem)
+                        {
+                            decay_multiplier *= Settings.settings.hideDecay;
+                        }
                         else if (gi.m_ArrowItem)
                         {
                             decay_multiplier *= Settings.settings.arrowDecay;
