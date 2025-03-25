@@ -59,6 +59,11 @@ namespace GearDecayModifier
         [Slider(0f, 2f, 1)]
         public float waterPurifierDecay = 1f;
 
+        [Name("Cooking pots decay rate")]
+        [Description("At what rate recylced Can, Cooking Pot and skillet will decay when left emptied on a fire. For example, 1 is default, 0.5 is half decay, and 0 is no decay at all.")]
+        [Slider(0f, 2f, 1)]
+        public float cookingPotDecay = 1f;
+
         [Name("Coffee Tins & Herbal Tea packages decay rate")]
         [Description("At what rate the coffee tin & herbal tea package will decay. For example, 1 is default, 0.5 is half decay, and 0 is no decay at all.")]
         [Slider(0f, 2f, 1)]
