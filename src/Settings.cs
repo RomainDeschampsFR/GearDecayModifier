@@ -54,6 +54,11 @@ namespace GearDecayModifier
         [Slider(0f, 2f, 1)]
         public float snareDecay = 1f;
 
+        [Name("Water Purification Tablets decay rate")]
+        [Description("At what rate the Water Purification Tablets will decay. For example, 1 is default, 0.5 is half decay, and 0 is no decay at all.")]
+        [Slider(0f, 2f, 1)]
+        public float waterPurifierDecay = 1f;
+
         [Name("Coffee Tins & Herbal Tea packages decay rate")]
         [Description("At what rate the coffee tin & herbal tea package will decay. For example, 1 is default, 0.5 is half decay, and 0 is no decay at all.")]
         [Slider(0f, 2f, 1)]

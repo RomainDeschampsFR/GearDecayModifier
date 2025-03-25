@@ -47,6 +47,10 @@ namespace GearDecayModifier
                         {
                             decay_multiplier *= Settings.settings.snareDecay;
                         }
+                        else if (gi.m_PurifyWater)
+                        {
+                            decay_multiplier *= Settings.settings.waterPurifierDecay;
+                        }
                         else if (gi.m_SprayPaintCan)
                         {
                             decay_multiplier *= Settings.settings.paintCanDecay;
