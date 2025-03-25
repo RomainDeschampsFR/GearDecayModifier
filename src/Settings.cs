@@ -39,11 +39,6 @@ namespace GearDecayModifier
         [Slider(0f, 2f, 1)]
         public float flareGunAmmoSingleDecay = 1f;
 
-        [Name("Spray paint can decay rate")]
-        [Description("At what rate the paint is consummed. For example, 1 is default, 0.5 is half decay, and 0 is no decay at all.")]
-        [Slider(0f, 2f, 1)]
-        public float paintCanDecay = 1f;
-
         [Name("Snare decay rate")]
         [Description("At what rate the snares will decay. For example, 1 is default, 0.5 is half decay, and 0 is no decay at all.")]
         [Slider(0f, 2f, 1)]

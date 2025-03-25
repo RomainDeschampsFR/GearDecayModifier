@@ -47,10 +47,6 @@ namespace GearDecayModifier
                         {
                             decay_multiplier *= Settings.settings.waterPurifierDecay;
                         }
-                        else if (gi.m_SprayPaintCan)
-                        {
-                            decay_multiplier *= Settings.settings.paintCanDecay;
-                        }
                         else if (gi.m_CookingPotItem)
                         {
                             decay_multiplier *= Settings.settings.paintCanDecay;
