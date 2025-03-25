@@ -43,6 +43,10 @@ namespace GearDecayModifier
                         {
                             decay_multiplier *= Settings.settings.torchDecay;
                         }
+                        else if (gi.m_SnareItem)
+                        {
+                            decay_multiplier *= Settings.settings.snareDecay;
+                        }
                         else if (gi.m_SprayPaintCan)
                         {
                             decay_multiplier *= Settings.settings.paintCanDecay;
