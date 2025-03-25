@@ -111,6 +111,10 @@ namespace GearDecayModifier
                                             decay_multiplier *= Settings.settings.cookedFishDecay;
                                         }
                                     }
+                                    else
+                                    {
+                                        decay_multiplier *= Settings.settings.otherFoodDecay;
+                                    }
                                 }
                                 else
                                 {

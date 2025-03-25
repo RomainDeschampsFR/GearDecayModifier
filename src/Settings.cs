@@ -70,7 +70,7 @@ namespace GearDecayModifier
         public float quartersDecay = 1f;
 
         [Name("Food decay rate")]
-        [Description("At what rate the food items decay. For example, 1 is default, 0.5 is half decay, and 0 is no decay at all.")]
+        [Description("At what rate the food items decay. This value will be ignored if Advanced Food Decay Modifier is enabled")]
         [Slider(0f, 2f, 1)]
         public float foodDecay = 1f;
 
@@ -213,7 +213,7 @@ namespace GearDecayModifier
             SetFieldVisible(nameof(cookedFishDecay), advDecay && advFoodDecay);
             SetFieldVisible(nameof(curedFishDecay), advDecay && advFoodDecay);
             SetFieldVisible(nameof(packagedFoodDecay), advDecay && advFoodDecay);
-            SetFieldVisible(nameof(openedFoodDecay), advDecay && advFoodDecay);
+            SetFieldVisible(nameof(otherFoodDecay), advDecay && advFoodDecay);
             SetFieldVisible(nameof(clothingDecay), advDecay);
             SetFieldVisible(nameof(quartersDecay), advDecay);
             SetFieldVisible(nameof(firstAidDecay), advDecay);
