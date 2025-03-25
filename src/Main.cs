@@ -39,10 +39,6 @@ namespace GearDecayModifier
                         {
                             decay_multiplier *= Settings.settings.flareGunAmmoSingleDecay;
                         }
-                        else if (gi.m_TorchItem)
-                        {
-                            decay_multiplier *= Settings.settings.torchDecay;
-                        }
                         else if (gi.m_SnareItem)
                         {
                             decay_multiplier *= Settings.settings.snareDecay;
