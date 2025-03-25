@@ -57,7 +57,14 @@ namespace GearDecayModifier
                         }
                         else if (gi.m_BodyHarvest)
                         {
-                            decay_multiplier *= Settings.settings.quartersDecay;
+                            if (gi.m_WildlifeItem)
+                            {
+                                decay_multiplier *= Settings.settings.carcassDecay;
+                            }
+                            else
+                            {
+                                decay_multiplier *= Settings.settings.quartersDecay;
+                            }
                         }
                         else if (gi.m_ArrowItem)
                         {

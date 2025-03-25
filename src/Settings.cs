@@ -59,6 +59,11 @@ namespace GearDecayModifier
         [Slider(0f, 2f, 1)]
         public float clothingDecay = 1f;
 
+        [Name("Rabbit/Ptarmigan carcass decay rate")]
+        [Description("At what rate the Rabbit/Ptarmigan carcasses decay.")]
+        [Slider(0f, 2f, 1)]
+        public float carcassDecay = 1f;
+
         [Name("Quarter bags decay rate")]
         [Description("At what rate the quarter bag items decay.")]
         [Slider(0f, 2f, 1)]
