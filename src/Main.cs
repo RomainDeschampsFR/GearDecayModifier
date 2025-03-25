@@ -114,7 +114,11 @@ namespace GearDecayModifier
                                 }
                                 else
                                 {
-                                    if (!gi.m_FoodItem.m_Opened)
+                                    if (gi.m_FoodItem.m_IsDrink)
+                                    {
+                                        decay_multiplier *= Settings.settings.drinksDecay;
+                                    }
+                                    else if (!gi.m_FoodItem.m_Opened)
                                     {
                                         decay_multiplier *= Settings.settings.packagedFoodDecay;
                                     }

@@ -83,6 +83,11 @@ namespace GearDecayModifier
         [Slider(0f, 2f, 1)]
         public float fatDecay = 1f;
 
+        [Name("Drinks decay rate")]
+        [Description("This affects the rate at which sodas will decay.")]
+        [Slider(0f, 2f, 1)]
+        public float drinksDecay = 1f;
+
         [Name("Raw meat decay rate")]
         [Description("This affects the rate at which raw meat and fish will decay.")]
         [Slider(0f, 2f, 1)]
