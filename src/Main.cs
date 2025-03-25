@@ -49,7 +49,7 @@ namespace GearDecayModifier
                         }
                         else if (gi.m_CookingPotItem)
                         {
-                            decay_multiplier *= Settings.settings.paintCanDecay;
+                            decay_multiplier *= Settings.settings.cookingPotDecay;
                         }
                         else if (gi.name == "GEAR_CoffeeTin" || gi.name == "GEAR_GreenTeaPackage")
                         {
