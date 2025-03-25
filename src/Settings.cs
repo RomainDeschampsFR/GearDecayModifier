@@ -18,6 +18,11 @@ namespace GearDecayModifier
         [Slider(0f, 2f, 1)]
         public float bedrollDecay = 1f;
 
+        [Name("Travois decay rate")]
+        [Description("At what rate the travois decay. Affects both degradation over time and when used.")]
+        [Slider(0f, 2f, 1)]
+        public float travoisDecay = 1f;
+
         // DECAY OVER TIME
         [Section("DECAY OVER TIME")]
         [Name("Global decay rate")]

@@ -23,6 +23,10 @@ namespace GearDecayModifier
             {
                 decay_multiplier *= Settings.settings.bedrollDecay;
             }
+            else if (gi.m_Travois)
+            {
+                decay_multiplier *= Settings.settings.travoisDecay;
+            }
             else
             {
                 if (!gi.m_DegradeOnUse)
