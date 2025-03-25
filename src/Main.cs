@@ -39,6 +39,10 @@ namespace GearDecayModifier
                         {
                             decay_multiplier *= Settings.settings.flareGunAmmoSingleDecay;
                         }
+                        else if (gi.m_TorchItem)
+                        {
+                            decay_multiplier *= Settings.settings.torchDecay;
+                        }
                         else if (gi.name == "GEAR_CoffeeTin" || gi.name == "GEAR_GreenTeaPackage")
                         {
                             decay_multiplier *= Settings.settings.coffeeTeaDecay;
@@ -51,7 +55,7 @@ namespace GearDecayModifier
                         {
                             decay_multiplier *= Settings.settings.clothingDecay;
                         }
-                        else if (gi.m_BodyHarvest.m)
+                        else if (gi.m_BodyHarvest)
                         {
                             decay_multiplier *= Settings.settings.quartersDecay;
                         }
