@@ -128,10 +128,10 @@ namespace GearDecayModifier
         [Slider(0f, 2f, 1)]
         public float cannedFoodDecay = 1f;
 
-        [Name("Packaged food decay rate when opened")]
-        [Description("This affects the rate at which packaged foods will decay while they are open.")]
+        [Name("Other food decay rate")]
+        [Description("This affects the rate at which cooked meals and opened canned food will decay.")]
         [Slider(0f, 2f, 1)]
-        public float openedFoodDecay = 1f;
+        public float otherFoodDecay = 1f;
 
         [Name("First aid items decay rate")]
         [Description("At what rate the medicine items decay.")]

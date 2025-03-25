@@ -128,7 +128,7 @@ namespace GearDecayModifier
                                     }
                                     else
                                     {
-                                        decay_multiplier *= Settings.settings.openedFoodDecay;
+                                        decay_multiplier *= Settings.settings.otherFoodDecay;
                                     }
                                 }
                             }
