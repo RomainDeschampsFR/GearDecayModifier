@@ -166,7 +166,7 @@ namespace GearDecayModifier
         public bool advOnUseDecay = false;
 
         [Name("Guns")]
-        [Description("Modifies how much decay is applied when firing any gun (rifle or revolver).")]
+        [Description("Modifies how much decay is applied when firing any gun (rifles, revolvers and flare gun).")]
         [Slider(0f, 2f, 41, NumberFormat = "{0:0.00}")]
         public float gunDecay = 1f;
 
@@ -210,6 +210,13 @@ namespace GearDecayModifier
 
         internal void RefreshFields()
         {
+
+            SetFieldVisible(nameof(clothingDecay), advDecay);
+            SetFieldVisible(nameof(bodyHarvestDecay), advDecay);
+            SetFieldVisible(nameof(firstAidDecay), advDecay);
+            SetFieldVisible(nameof(flareGunAmmoSingleDecay), advDecay);
+            SetFieldVisible(nameof(arrowDecay), advDecay);
+            SetFieldVisible(nameof(coffeeTeaDecay), advDecay);
             SetFieldVisible(nameof(foodDecay), advDecay);
             SetFieldVisible(nameof(advFoodDecay), advDecay);
             SetFieldVisible(nameof(fatDecay), advDecay && advFoodDecay);
@@ -219,18 +226,16 @@ namespace GearDecayModifier
             SetFieldVisible(nameof(rawFishDecay), advDecay && advFoodDecay);
             SetFieldVisible(nameof(cookedFishDecay), advDecay && advFoodDecay);
             SetFieldVisible(nameof(curedFishDecay), advDecay && advFoodDecay);
+            SetFieldVisible(nameof(drinksDecay), advDecay && advFoodDecay);
             SetFieldVisible(nameof(packagedFoodDecay), advDecay && advFoodDecay);
+            SetFieldVisible(nameof(cannedFoodDecay), advDecay && advFoodDecay);
             SetFieldVisible(nameof(otherFoodDecay), advDecay && advFoodDecay);
-            SetFieldVisible(nameof(clothingDecay), advDecay);
-            SetFieldVisible(nameof(bodyHarvestDecay), advDecay);
-            SetFieldVisible(nameof(firstAidDecay), advDecay);
-            SetFieldVisible(nameof(flareGunAmmoSingleDecay), advDecay);
-            SetFieldVisible(nameof(coffeeTeaDecay), advDecay);
+            // ON USE DECAY
             SetFieldVisible(nameof(gunDecay), advOnUseDecay);
             SetFieldVisible(nameof(bowDecay), advOnUseDecay);
-            SetFieldVisible(nameof(arrowDecay), advOnUseDecay);
             SetFieldVisible(nameof(firestartingDecay), advOnUseDecay);
             SetFieldVisible(nameof(whetstoneDecay), advOnUseDecay);
+            SetFieldVisible(nameof(canOpenerDecay), advOnUseDecay);
             SetFieldVisible(nameof(prybarDecay), advOnUseDecay);
             SetFieldVisible(nameof(toolsDecay), advOnUseDecay);
         }
