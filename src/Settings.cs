@@ -6,8 +6,7 @@ namespace GearDecayModifier
 {
     internal class GearDecayModifiersSettings : JsonModSettings
     {
-        [Section("GENERAL DECAY SETTINGS")]
-
+        [Section("GLOBAL DECAY SETTINGS")]
         [Name("Global decay Rate before pickup")]
         [Description("At what rate the items will decay before being picked up or inspected. For example, 1 is default, 0.5 is half decay, and 0 is no decay until you discover the item.")]
         [Slider(0f, 2f, 41, NumberFormat = "{0:0.00}")]
@@ -25,8 +24,8 @@ namespace GearDecayModifier
 
         // DECAY OVER TIME
         [Section("DECAY OVER TIME")]
-        [Name("Global")]
-        [Description("Base modifier for the rate items will decay over time (doesn't affect items that decay on use). For example, 1 is default, 0 is no decay, 0.5 is half the normal decay and 2 doubles the rate. If advanced decay is on, this rate will only be applied to items not in other categories.")]
+        [Name("Global decay over time")]
+        [Description("Base modifier for the rate items will decay over time (doesn't affect items that decay on use). For example, 1 is default, 0 is no decay, 0.5 is half the normal decay and 2 doubles the rate. \nGlobal decay over time setting will still be applied for anything not covered by the following categories.")]
         [Slider(0f, 2f, 41, NumberFormat = "{0:0.00}")]
         public float generalDecay = 1f;
 
@@ -40,7 +39,7 @@ namespace GearDecayModifier
         public float flareGunAmmoSingleDecay = 1f;
 
         [Name("Arrows")]
-        [Description("Modifies how much decay is applied when to arrows when shot.")]
+        [Description("Modifies how much decay is applied to arrows when they hit something.")]
         [Slider(0f, 2f, 41, NumberFormat = "{0:0.00}")]
         public float arrowDecay = 1f;
 
@@ -59,18 +58,13 @@ namespace GearDecayModifier
         [Slider(0f, 2f, 41, NumberFormat = "{0:0.00}")]
         public float coffeeTeaDecay = 1f;
 
-        [Name("Cooking Ingredients")]
-        [Description("At what rate the cooking ingredients will decay. Raw Potatoes, Carrots, Old Mill Flour & Running River Oats")]
-        [Slider(0f, 2f, 41, NumberFormat = "{0:0.00}")]
-        public float ingredientsDecay = 1f;
-
         [Name("Clothing")]
-        [Description("At what rate the clothing will decay. For example, 1 is default, 0.5 is half decay, and 0 is no decay at all.")]
+        [Description("At what rate the clothing will decay. This setting will also impact damage from fall or struggle with predators")]
         [Slider(0f, 2f, 41, NumberFormat = "{0:0.00}")]
         public float clothingDecay = 1f;
 
         [Name("Quarter bags & Rabbit/Ptarmigan Carcasses")]
-        [Description("At what rate the quarter bags & Rabbit/Ptarmigan Carcasses items decay.")]
+        [Description("At what rate the quarter bags & Rabbit/Ptarmigan Carcasses decay.")]
         [Slider(0f, 2f, 41, NumberFormat = "{0:0.00}")]
         public float bodyHarvestDecay = 1f;
 
@@ -89,80 +83,84 @@ namespace GearDecayModifier
         [Slider(0f, 2f, 41, NumberFormat = "{0:0.00}")]
         public float waterPurifierDecay = 1f;
 
-        [Section("FOOD SETTINGS")]
+        [Name("Cooking Ingredients")]
+        [Description("At what rate the cooking ingredients will decay. Raw Potatoes, Carrots, Old Mill Flour & Running River Oats")]
+        [Slider(0f, 2f, 41, NumberFormat = "{0:0.00}")]
+        public float ingredientsDecay = 1f;
+
         [Name("Food")]
         [Description("At what rate the food items decay. This value will be ignored if Advanced Food Decay Modifier is enabled")]
         [Slider(0f, 2f, 41, NumberFormat = "{0:0.00}")]
         public float foodDecay = 1f;
 
         [Name("Advanced food decay Modifiers")]
-        [Description("Turn this on to make food decay control more granular.")]
+        [Description("Turn this on to make food decay control more granular. If enable FOOD setting will be ignored")]
         public bool advFoodDecay = false;
 
-        [Name("Animal Fat")]
+        [Name("        Animal Fat")]
         [Description("This affects the rate at which animal fat will decay.")]
         [Slider(0f, 2f, 41, NumberFormat = "{0:0.00}")]
         public float fatDecay = 1f;
 
-        [Name("Raw meat")]
+        [Name("        Raw meat")]
         [Description("This affects the rate at which raw meat and fish will decay.")]
         [Slider(0f, 2f, 41, NumberFormat = "{0:0.00}")]
         public float rawMeatDecay = 1f;
 
-        [Name("Cooked meat")]
+        [Name("        Cooked meat")]
         [Description("This affects the rate at which cooked meat and fish will decay.")]
         [Slider(0f, 2f, 41, NumberFormat = "{0:0.00}")]
         public float cookedMeatDecay = 1f;
 
-        [Name("Cured Meat")]
+        [Name("        Cured Meat")]
         [Description("This affects the rate at which cured meat will decay.")]
         [Slider(0f, 2f, 41, NumberFormat = "{0:0.00}")]
         public float curedMeatDecay = 1f;
 
-        [Name("Raw fish")]
+        [Name("        Raw fish")]
         [Description("This affects the rate at which raw fish and fish will decay.")]
         [Slider(0f, 2f, 41, NumberFormat = "{0:0.00}")]
         public float rawFishDecay = 1f;
 
-        [Name("Cooked fish")]
+        [Name("        Cooked fish")]
         [Description("This affects the rate at which cooked fish and fish will decay.")]
         [Slider(0f, 2f, 41, NumberFormat = "{0:0.00}")]
         public float cookedFishDecay = 1f;
 
-        [Name("Cured Fish")]
+        [Name("        Cured Fish")]
         [Description("This affects the rate at which cured fish will decay.")]
         [Slider(0f, 2f, 41, NumberFormat = "{0:0.00}")]
         public float curedFishDecay = 1f;
 
-        [Name("Drinks")]
+        [Name("        Drinks")]
         [Description("This affects the rate at which sodas will decay.")]
         [Slider(0f, 2f, 41, NumberFormat = "{0:0.00}")]
         public float drinksDecay = 1f;
 
-        [Name("Packaged food")]
+        [Name("        Packaged food")]
         [Description("This affects the rate at which packaged foods will decay.")]
         [Slider(0f, 2f, 41, NumberFormat = "{0:0.00}")]
         public float packagedFoodDecay = 1f;
 
-        [Name("Canned food")]
+        [Name("        Canned food")]
         [Description("This affects the rate at which non-opened canned foods will decay.")]
         [Slider(0f, 2f, 41, NumberFormat = "{0:0.00}")]
         public float cannedFoodDecay = 1f;
 
-        [Name("Other food")]
+        [Name("        Other food")]
         [Description("This affects the rate at which cooked meals and opened canned food will decay.")]
         [Slider(0f, 2f, 41, NumberFormat = "{0:0.00}")]
         public float otherFoodDecay = 1f;
 
         // DECAY ON USE
         [Section("DECAY ON USE")]
-        [Name("Global On Use")]
+        [Name("Global Decay On Use")]
         [Description("Modifier for how much tools will decay after uses. Setting this to 0.5 would make them last twice as long, while setting this to 2 will make them last half as long.")]
         [Slider(0f, 2f, 41, NumberFormat = "{0:0.00}")]
         public float onUseDecay = 1f;
 
-        [Name("Advanced on use decay Modifiers")]
-        [Description("Turn this on to make on use decay control more granular.\nGlobal decay on use setting will still be applied for anything not covered by the foloowing categories")]
+        [Name("Advanced decay on use Modifiers")]
+        [Description("Turn this on to make on use decay control more granular.\nGlobal decay on use setting will still be applied for anything not covered by the following categories")]
         public bool advOnUseDecay = false;
 
         [Name("Guns")]
@@ -195,7 +193,7 @@ namespace GearDecayModifier
         [Slider(0f, 2f, 41, NumberFormat = "{0:0.00}")]
         public float prybarDecay = 1f;
 
-        [Name("Tools")]
+        [Name("Other Tools")]
         [Description("Modifies how much decay is applied to tools when used, this includes knives or hatchets among others.")]
         [Slider(0f, 2f, 41, NumberFormat = "{0:0.00}")]
         public float toolsDecay = 1f;
@@ -210,7 +208,11 @@ namespace GearDecayModifier
 
         internal void RefreshFields()
         {
-
+            SetFieldVisible(nameof(snareDecay), advDecay);
+            SetFieldVisible(nameof(cookingPotDecay), advDecay);
+            SetFieldVisible(nameof(hideDecay), advDecay);
+            SetFieldVisible(nameof(waterPurifierDecay), advDecay);
+            SetFieldVisible(nameof(ingredientsDecay), advDecay);
             SetFieldVisible(nameof(clothingDecay), advDecay);
             SetFieldVisible(nameof(bodyHarvestDecay), advDecay);
             SetFieldVisible(nameof(firstAidDecay), advDecay);
