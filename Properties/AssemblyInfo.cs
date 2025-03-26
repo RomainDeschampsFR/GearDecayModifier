@@ -1,6 +1,5 @@
 using MelonLoader;
 using System.Reflection;
-using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("GearDecayModifier")]
 [assembly: AssemblyCopyright("Created by Xpazeman")]

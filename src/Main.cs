@@ -1,6 +1,4 @@
-﻿using System.Reflection;
-using UnityEngine;
-using MelonLoader;
+﻿using MelonLoader;
 using Il2Cpp;
 
 namespace GearDecayModifier
@@ -51,14 +49,6 @@ namespace GearDecayModifier
                         {
                             decay_multiplier *= Settings.settings.cookingPotDecay;
                         }
-                        else if (gi.name == "GEAR_CoffeeTin" || gi.name == "GEAR_GreenTeaPackage")
-                        {
-                            decay_multiplier *= Settings.settings.coffeeTeaDecay;
-                        }
-                        else if (gi.name == "GEAR_Potato" || gi.name == "GEAR_Carrot" || gi.name == "GEAR_Flour" || gi.name == "GEAR_OatsTin")
-                        {
-                            decay_multiplier *= Settings.settings.ingredientsDecay;
-                        }
                         else if (gi.m_ClothingItem)
                         {
                             decay_multiplier *= Settings.settings.clothingDecay;
@@ -78,6 +68,14 @@ namespace GearDecayModifier
                         else if (gi.m_FirstAidItem)
                         {
                             decay_multiplier *= Settings.settings.firstAidDecay;
+                        }
+                        else if (gi.name == "GEAR_CoffeeTin" || gi.name == "GEAR_GreenTeaPackage")
+                        {
+                            decay_multiplier *= Settings.settings.coffeeTeaDecay;
+                        }
+                        else if (gi.name == "GEAR_Potato" || gi.name == "GEAR_Carrot" || gi.name == "GEAR_Flour" || gi.name == "GEAR_OatsTin")
+                        {
+                            decay_multiplier *= Settings.settings.ingredientsDecay;
                         }
                         else if (gi.m_FoodItem)
                         {
