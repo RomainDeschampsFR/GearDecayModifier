@@ -9,3 +9,5 @@ There's also a control to set at what rate items will decay until the player fin
 
 ## CREDITS
 Created by Xpazeman
+
+[![Github All Releases](https://img.shields.io/github/downloads/RomainDeschampsFR/GearDecayModifier/total.svg)]()
