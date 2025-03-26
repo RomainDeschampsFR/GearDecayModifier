@@ -65,14 +65,7 @@ namespace GearDecayModifier
                         }
                         else if (gi.m_BodyHarvest)
                         {
-                            if (gi.m_WildlifeItem)
-                            {
-                                decay_multiplier *= Settings.settings.carcassDecay;
-                            }
-                            else
-                            {
-                                decay_multiplier *= Settings.settings.quartersDecay;
-                            }
+                            decay_multiplier *= Settings.settings.bodyHarvestDecay;
                         }
                         else if (gi.m_EvolveItem)
                         {
@@ -81,6 +74,10 @@ namespace GearDecayModifier
                         else if (gi.m_ArrowItem)
                         {
                             decay_multiplier *= Settings.settings.arrowDecay;
+                        }
+                        else if (gi.m_FirstAidItem)
+                        {
+                            decay_multiplier *= Settings.settings.firstAidDecay;
                         }
                         else if (gi.m_FoodItem)
                         {
@@ -153,10 +150,6 @@ namespace GearDecayModifier
                                 decay_multiplier *= Settings.settings.foodDecay;
                             }
                         }
-                        else if (gi.m_FirstAidItem)
-                        {
-                            decay_multiplier *= Settings.settings.firstAidDecay;
-                        }
                         else
                         {
                             decay_multiplier *= Settings.settings.generalDecay;
@@ -185,21 +178,24 @@ namespace GearDecayModifier
                         {
                             decay_multiplier *= Settings.settings.firestartingDecay;
                         }
-                        else if (gi.name == "GEAR_SharpeningStone")
-                        {
-                            decay_multiplier *= Settings.settings.whetstoneDecay;
-                        }
-                        else if (gi.name == "GEAR_CanOpener")
-                        {
-                            decay_multiplier *= Settings.settings.canOpenerDecay;
-                        }
-                        else if (gi.name == "GEAR_Prybar")
-                        {
-                            decay_multiplier *= Settings.settings.prybarDecay;
-                        }
                         else if (gi.m_ToolsItem)
                         {
-                            decay_multiplier *= Settings.settings.toolsDecay;
+                            if (gi.name == "GEAR_SharpeningStone")
+                            {
+                                decay_multiplier *= Settings.settings.whetstoneDecay;
+                            }
+                            else if (gi.name == "GEAR_CanOpener")
+                            {
+                                decay_multiplier *= Settings.settings.canOpenerDecay;
+                            }
+                            else if (gi.name == "GEAR_Prybar")
+                            {
+                                decay_multiplier *= Settings.settings.prybarDecay;
+                            }
+                            else
+                            {
+                                decay_multiplier *= Settings.settings.toolsDecay;
+                            }
                         }
                         else
                         {

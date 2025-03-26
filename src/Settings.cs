@@ -13,12 +13,12 @@ namespace GearDecayModifier
         [Slider(0f, 2f, 1)]
         public float decayBeforePickup = 1f;
 
-        [Name("Bedrolls decay rate")]
+        [Name("Bedrolls")]
         [Description("At what rate the bedroll items decay. Affects both degradation over time and when used.")]
         [Slider(0f, 2f, 1)]
         public float bedrollDecay = 1f;
 
-        [Name("Travois decay rate")]
+        [Name("Travois")]
         [Description("At what rate the travois decay. Affects both degradation over time and when used.")]
         [Slider(0f, 2f, 1)]
         public float travoisDecay = 1f;
@@ -34,56 +34,62 @@ namespace GearDecayModifier
         [Description("Turn this on to make decay control more granular.")]
         public bool advDecay = false;
 
-        [Name("Flare Gun Ammo decay rate")]
+        [Name("Flare Gun Ammunition")]
         [Description("At what rate the flare gun ammo will decay. For example, 1 is default, 0.5 is half decay, and 0 is no decay at all.")]
         [Slider(0f, 2f, 1)]
         public float flareGunAmmoSingleDecay = 1f;
 
-        [Name("Snare decay rate")]
+        [Name("Arrows")]
+        [Description("Modifies how much decay is applied when to arrows when shot.")]
+        [Slider(0f, 2f, 1)]
+        public float arrowDecay = 1f;
+
+        [Name("Snare")]
         [Description("At what rate the snares will decay. For example, 1 is default, 0.5 is half decay, and 0 is no decay at all.")]
         [Slider(0f, 2f, 1)]
         public float snareDecay = 1f;
 
-        [Name("Water Purification Tablets decay rate")]
-        [Description("At what rate the Water Purification Tablets will decay. For example, 1 is default, 0.5 is half decay, and 0 is no decay at all.")]
-        [Slider(0f, 2f, 1)]
-        public float waterPurifierDecay = 1f;
-
-        [Name("Cooking pots decay rate")]
+        [Name("Cooking pots")]
         [Description("At what rate recylced Can, Cooking Pot and skillet will decay when left emptied on a fire. For example, 1 is default, 0.5 is half decay, and 0 is no decay at all.")]
         [Slider(0f, 2f, 1)]
         public float cookingPotDecay = 1f;
 
-        [Name("Coffee Tins & Herbal Tea packages decay rate")]
+        [Name("Coffee Tins & Herbal Tea Packages")]
         [Description("At what rate the coffee tin & herbal tea package will decay. For example, 1 is default, 0.5 is half decay, and 0 is no decay at all.")]
         [Slider(0f, 2f, 1)]
         public float coffeeTeaDecay = 1f;
 
-        [Name("Cooking ingredients decay rate")]
+        [Name("Cooking Ingredients")]
         [Description("At what rate the cooking ingredients will decay. Raw Potatoes, Carrots, Old Mill Flour & Running River Oats")]
         [Slider(0f, 2f, 1)]
         public float ingredientsDecay = 1f;
 
-        [Name("Clothing decay rate")]
+        [Name("Clothing")]
         [Description("At what rate the clothing will decay. For example, 1 is default, 0.5 is half decay, and 0 is no decay at all.")]
         [Slider(0f, 2f, 1)]
         public float clothingDecay = 1f;
 
-        [Name("Rabbit/Ptarmigan carcass decay rate")]
-        [Description("At what rate the Rabbit/Ptarmigan carcasses decay.")]
+        [Name("Quarter bags & Rabbit/Ptarmigan Carcasses")]
+        [Description("At what rate the quarter bags & Rabbit/Ptarmigan Carcasses items decay.")]
         [Slider(0f, 2f, 1)]
-        public float carcassDecay = 1f;
-
-        [Name("Quarter bags decay rate")]
-        [Description("At what rate the quarter bag items decay.")]
-        [Slider(0f, 2f, 1)]
-        public float quartersDecay = 1f;
+        public float bodyHarvestDecay = 1f;
 
         [Name("Fresh hides decay rate")]
         [Description("At what rate the fresh hides/pelts items decay.")]
         [Slider(0f, 2f, 1)]
         public float hideDecay = 1f;
 
+        [Name("First aid items decay rate")]
+        [Description("At what rate the medicine items decay.")]
+        [Slider(0f, 2f, 1)]
+        public float firstAidDecay = 1f;
+
+        [Name("Water Purification Tablets decay rate")]
+        [Description("At what rate the Water Purification Tablets will decay. For example, 1 is default, 0.5 is half decay, and 0 is no decay at all.")]
+        [Slider(0f, 2f, 1)]
+        public float waterPurifierDecay = 1f;
+
+        [Section("FOOD SETTINGS")]
         [Name("Food decay rate")]
         [Description("At what rate the food items decay. This value will be ignored if Advanced Food Decay Modifier is enabled")]
         [Slider(0f, 2f, 1)]
@@ -148,16 +154,6 @@ namespace GearDecayModifier
         [Slider(0f, 2f, 1)]
         public float otherFoodDecay = 1f;
 
-        [Name("First aid items decay rate")]
-        [Description("At what rate the medicine items decay.")]
-        [Slider(0f, 2f, 1)]
-        public float firstAidDecay = 1f;
-
-        [Name("Fresh hide decay rate")]
-        [Description("At what rate freshly harvested hide decay.")]
-        [Slider(0f, 2f, 1)]
-        public float freshHideDecay = 1f;
-
         // DECAY ON USE
         [Section("DECAY ON USE")]
         [Name("Global On Use decay rate")]
@@ -178,11 +174,6 @@ namespace GearDecayModifier
         [Description("Modifies how much decay is applied when shooting with a bow.")]
         [Slider(0f, 2f, 1)]
         public float bowDecay = 1f;
-
-        [Name("Arrows decay rate")]
-        [Description("Modifies how much decay is applied when to arrows when shot.")]
-        [Slider(0f, 2f, 1)]
-        public float arrowDecay = 1f;
 
         [Name("Fire starting gear decay rate")]
         [Description("Modifies how much decay is applied to the fire starting gear when used.")]
