@@ -14,13 +14,4 @@ namespace GearDecayModifier
             hp *= decay_multiplier;
         }
     }
-
-    [HarmonyPatch(typeof(GearItem), nameof(GearItem.DecayOverTODHours), new Type[] { typeof(float), typeof(float) })]
-    internal class GearItem_DecayOverTODHours
-    {
-        private static void Prefix(GearItem __instance, float deltaTODHours, float scale)
-        {
-            MelonLogger.Msg("DecayOverTODHours called");
-        }
-    }
 }
