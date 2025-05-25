@@ -12,10 +12,10 @@ namespace GearDecayModifier
 
         public static float ApplyDecayModifier(GearItem gi)
         {
-            float decay_multiplier = 1f;
+            float decay_multiplier = 0f;
 
             //Before pickup decay
-            if (!gi.m_BeenInspected && !gi.m_BeenInPlayerInventory) decay_multiplier *= Settings.settings.decayBeforePickup;
+            if (gi.m_DecayAccumulator != 0) decay_multiplier *= Settings.settings.decayBeforePickup;
 
             if (gi.m_Bed)
             {
