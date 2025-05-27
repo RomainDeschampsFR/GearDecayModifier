@@ -12,11 +12,11 @@ namespace GearDecayModifier
 
         public static float ApplyDecayModifier(GearItem gi)
         {
-            float decay_multiplier = 0f;
+            float decay_multiplier = 1f;
 
             //Before pickup decay
-            if (gi.m_DecayAccumulator != 0) decay_multiplier *= Settings.settings.decayBeforePickup;
-
+            if (!gi.m_BeenInspected && !gi.m_BeenInPlayerInventory) decay_multiplier *= Settings.settings.decayBeforePickup;
+                
             if (gi.m_Bed)
             {
                 decay_multiplier *= Settings.settings.bedrollDecay;
@@ -206,6 +206,12 @@ namespace GearDecayModifier
                     }
                 }
             }
+
+            if (decay_multiplier == 0)
+            {
+                gi.m_DecayAccumulator = 0f;
+            }
+
             return decay_multiplier;
         }
     }

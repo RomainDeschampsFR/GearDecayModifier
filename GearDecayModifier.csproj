@@ -69,7 +69,6 @@
         <Reference Include="Il2CppDelaunayER" />
         <Reference Include="Il2CppEasyRoads3Dv3" />
         <Reference Include="Il2CppGdkUtilities" />
-        <Reference Include="Il2CppHint.OptionalContent" />
         <Reference Include="Il2CppHOTween" />
         <Reference Include="Il2CppInfinityCode.MeshToTerrain.Runtime" />
         <Reference Include="Il2CppMegaWire.Runtime" />
@@ -117,12 +116,10 @@
         <Reference Include="Il2CppTotalBaker.Runtime" />
         <Reference Include="Il2CppUniStorm.Runtime" />
         <Reference Include="Il2Cppuniumlib" />
-        <Reference Include="Il2CppUserReporting" />
         <Reference Include="Il2CppVolumetricObjects.Runtime" />
         <Reference Include="Il2CppXGamingRuntime" />
         <Reference Include="Unity.Addressables" />
         <Reference Include="Unity.Analytics.DataPrivacy" />
-        <Reference Include="Unity.Analytics.StandardEvents" />
         <Reference Include="Unity.Burst" />
         <Reference Include="Unity.Burst.Unsafe" />
         <Reference Include="Unity.Mathematics" />
@@ -130,10 +127,6 @@
         <Reference Include="Unity.ScriptableBuildPipeline" />
         <Reference Include="Unity.TextMeshPro" />
         <Reference Include="Unity.Timeline" />
-        <Reference Include="Unity.VisualScripting.Antlr3.Runtime" />
-        <Reference Include="Unity.VisualScripting.Core" />
-        <Reference Include="Unity.VisualScripting.Flow" />
-        <Reference Include="Unity.VisualScripting.State" />
         <Reference Include="UnityEngine.AccessibilityModule" />
         <Reference Include="UnityEngine.AIModule" />
         <Reference Include="UnityEngine.AndroidJNIModule" />
